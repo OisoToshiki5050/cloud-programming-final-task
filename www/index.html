@@ -77,6 +77,12 @@
       TestDataClass.equalTo("name",name).fetchAll().then(function(results){showResults(results)})
     }
 
+    function searchLevel(){
+      let level = parseInt($("#level").val(),10);
+      let TestDataClass = ncmb.DataStore(db);
+      TestDataClass.equalTo("level", level).fetchAll().then(function(results){showResults(results);})
+    }
+
     </script>
 </head>
 <body>
