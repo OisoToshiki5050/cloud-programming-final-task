@@ -95,6 +95,26 @@
       TestDataClass.greaterThan("level", level).fetchAll().then(function(results){showResults(results);})
     }
 
+    function searchattack(){
+      let attack = parseInt($("#level").val(),10);
+      let TestDataClass = ncmb.DataStore(db);
+      TestDataClass.equalTo("attack", attack).fetchAll().then(function(results){showResults(results);})
+    }
+
+    function searchattackLT(){
+      let attack = parseInt($("#level").val(),10);
+      let TestDataClass = ncmb.DataStore(db);
+      TestDataClass.lessThan("attack", attack).fetchAll().then(function(results){showResults(results);})
+    }
+
+    function searchattackGT(){
+      let attack = parseInt($("#level").val(),10);
+      let TestDataClass = ncmb.DataStore(db);
+      TestDataClass.greaterThan("attack", attack).fetchAll().then(function(results){showResults(results);})
+    }
+
+    
+
     </script>
 </head>
 <body>
@@ -117,9 +137,7 @@
     <button class="btn" onclick="searchattackLT()">attack &lt</button>
     <button class="btn" onclick="searchattack()">attack</button>
     <button class="btn" onclick="searchattackGT()">attack &gt</button>
-    <button class="btn" onclick="searchdefenceLT()">defence &lt</button>
-    <button class="btn" onclick="searchdefence()">defence</button>
-    <button class="btn" onclick="searchdefenceGT()">defence &gt</button>
+    
   </div>
   <div id="message">initializing...</div>
 </body>
